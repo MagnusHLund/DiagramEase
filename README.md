@@ -15,6 +15,8 @@ The vision for this project i:
 11. Editing page size
 
 If those requriements ever get met, then it would be cool to have a basic system that can detect C# code and make automatic diagrams based on certian keywords such as creating instances of new classes.
+Its not supposed to compile the code, it should just look at a giant string of all the code and spot the required information to make a class diagram and perhaps other diagrams.
+Flow charts would be difficult to do like that though. It makes the most sense to just do it as a string, for the sake of simplicity.
 
 This project will most likely never get finished, however this is the vision.
 
