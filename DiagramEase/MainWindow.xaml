@@ -5,8 +5,126 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiagramEase"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="DiagramEase" Height="600" Width="800" WindowState="Maximized">
     <Grid>
+        <!-- Top Navigation Menu -->
+        <Menu VerticalAlignment="Top">
+            <!-- Long Rectangle (Header Bar) -->
+            <Rectangle Height="20"/>
+            <MenuItem Header="File">
+                <!-- File Menu Items -->
+                <MenuItem Header="New" />
+                <MenuItem Header="Open" />
+                <MenuItem Header="Save as" />
+                <MenuItem Header="Save" />
+                <Separator />
+                <MenuItem Header="Export">
+                    <!-- Export Submenu -->
+                    <MenuItem Header="PDF" />
+                    <MenuItem Header="JPG" />
+                    <MenuItem Header="PNG" />
+                </MenuItem>
+            </MenuItem>
+            <!-- Edit Menu -->
+            <MenuItem Header="Edit">
+                <!-- Edit Menu Items -->
+                <MenuItem Header="Page Properties" />
+                <!-- Add more edit menu items here -->
+            </MenuItem>
+        </Menu>
 
+        <!-- Create a Grid with multiple columns and rows -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <!-- Row for the first navbar -->
+                <RowDefinition Height="Auto" />
+                <!-- Row for the second navbar -->
+                <RowDefinition Height="Auto" />
+                <!-- Row for the third navbar -->
+                <RowDefinition Height="*" />
+                <!-- Row for the content -->
+            </Grid.RowDefinitions>
+
+            <!-- Tab Navigation Bar -->
+            <!-- ... (Your existing code) -->
+
+            <!-- Third Navbar -->
+            <Border Grid.Row="2" Grid.Column="0" BorderThickness="0,1,0,1" BorderBrush="Gray" Background="#F0F0F0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="14" Margin="10">
+                    <!-- Zoom Option -->
+                    <TextBlock Text="Zoom" Margin="5"/>
+                    <!-- Vertical Line -->
+                    <TextBlock Text="|" Margin="5"/>
+                    <!-- Content -->
+                    <TextBlock Text="Normal Arrow" Margin="5"/>
+                    <TextBlock Text="Angled arrow" Margin="5"/>
+                    <TextBlock Text="Text" Margin="5"/>
+                    <!-- Vertical Line -->
+                    <TextBlock Text="|" Margin="5"/>
+                    <!-- Color Options -->
+                    <TextBlock Text="Text color" Margin="5"/>
+                    <TextBlock Text="Background color" Margin="5"/>
+                    <TextBlock Text="Gradient color" Margin="5"/>
+                    <!-- Vertical Line -->
+                    <TextBlock Text="|" Margin="5"/>
+                    <!-- Arrow Heads -->
+                    <TextBlock Text="Left arrow head" Margin="5"/>
+                    <TextBlock Text="Right arrow head" Margin="5"/>
+                    <!-- Arrow Middle Part Option -->
+                    <TextBlock Text="Arrow Middle Part" Margin="5"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Your content goes here -->
+            <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="This is the content of Tab x." />
+
+            <!-- Left side content -->
+            <Grid Grid.Column="0">
+                <!-- Top Navigation Menu -->
+                <!-- ... (Your existing code) -->
+            </Grid>
+
+            <!-- Right side content (Object Catalog) -->
+            <Grid Grid.Column="1" Grid.Row="0" Grid.RowSpan="4" Background="LightGray">
+                <StackPanel>
+                    <!-- Dropdown for object type selection -->
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <ComboBox Grid.Column="0" Width="120" SelectedIndex="0">
+                            <ComboBoxItem Content="Default" />
+                            <ComboBoxItem Content="GUI" />
+                            <ComboBoxItem Content="UML" />
+                            <ComboBoxItem Content="Custom" />
+                        </ComboBox>
+                        <!-- Import icon -->
+                        <Image Grid.Column="1" Source="Icons/Upload.png" Width="24" Height="24" />
+                    </Grid>
+
+                    <!-- Object Catalog content with scroll viewer -->
+                    <ScrollViewer Margin="10" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                        <StackPanel>
+                            <!-- Object catalog items go here -->
+                            <StackPanel Orientation="Horizontal">
+                                <Rectangle Width="100" Height="50" Fill="LightBlue" Margin="0 0 10 10" />
+                                <Rectangle Width="100" Height="50" Fill="LightGreen" Margin="0 0 10 10" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Rectangle Width="100" Height="50" Fill="LightPink" Margin="0 0 10 10" />
+                                <!-- Add more items as needed -->
+                            </StackPanel>
+                            <!-- Add more rows as needed -->
+                        </StackPanel>
+                    </ScrollViewer>
+                </StackPanel>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
