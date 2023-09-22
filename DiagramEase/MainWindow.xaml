@@ -51,32 +51,86 @@
             </Grid.RowDefinitions>
 
             <!-- Tab Navigation Bar -->
-            <!-- ... (Your existing code) -->
+            <Border Grid.Row="1" BorderThickness="0,1,0,0" BorderBrush="Gray" Margin="0,0,0,5">
+                <!-- Vertical StackPanel to contain both the header and tab content -->
+                <StackPanel Orientation="Vertical">
+                    <!-- Header Bar -->
+                    <Rectangle Height="20"/>
+                    <!-- Tab Navigation Bar -->
+                    <TabControl Name="TabsControl" Height="Auto">
+                        <!-- Example Tab 1 -->
+                        <TabItem>
+                            <!-- Header for Tab 1 -->
+                            <TabItem.Header>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <!-- Space for tab text -->
+                                        <ColumnDefinition Width="Auto" />
+                                        <!-- Space for close button -->
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="Tab 1" Margin="0,0,5,0" VerticalAlignment="Center" />
+                                    <!-- Close Button for Tab 1 -->
+                                    <Button Grid.Column="1" Content="X" Width="16" Height="16" Tag="Tab1" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                </Grid>
+                            </TabItem.Header>
+                            <!-- Content of Tab 1 -->
+                            <Grid>
+                                <!-- Content goes here -->
+                            </Grid>
+                        </TabItem>
+
+                        <!-- Example Tab 2 -->
+                        <TabItem>
+                            <!-- Header for Tab 2 -->
+                            <TabItem.Header>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <!-- Space for tab text -->
+                                        <ColumnDefinition Width="Auto" />
+                                        <!-- Space for close button -->
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Text="Tab 2" Margin="0,0,5,0" VerticalAlignment="Center" />
+                                    <!-- Close Button for Tab 2 -->
+                                    <Button Grid.Column="1" Content="X" Width="16" Height="16" Tag="Tab2" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                </Grid>
+                            </TabItem.Header>
+                            <!-- Content of Tab 2 -->
+                            <Grid>
+                                <!-- Content goes here -->
+                            </Grid>
+                        </TabItem>
+
+                        <!-- You can add more tabs as needed -->
+                    </TabControl>
+                </StackPanel>
+            </Border>
+
 
             <!-- Third Navbar -->
-            <Border Grid.Row="2" Grid.Column="0" BorderThickness="0,1,0,1" BorderBrush="Gray" Background="#F0F0F0">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="14" Margin="10">
+            <Border Grid.Row="2" Grid.Column="0" BorderThickness="0,1,0,1" BorderBrush="Gray" Background="#F0F0F0" Grid.ColumnSpan="2" Margin="0,0,0,5">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" TextBlock.FontSize="14">
                     <!-- Zoom Option -->
-                    <TextBlock Text="Zoom" Margin="5"/>
+                    <TextBlock Text="Zoom" Margin="5" HorizontalAlignment="Center"/>
                     <!-- Vertical Line -->
-                    <TextBlock Text="|" Margin="5"/>
+                    <TextBlock Text="|" Margin="5" HorizontalAlignment="Center"/>
                     <!-- Content -->
-                    <TextBlock Text="Normal Arrow" Margin="5"/>
-                    <TextBlock Text="Angled arrow" Margin="5"/>
-                    <TextBlock Text="Text" Margin="5"/>
+                    <Image Source="Icons/Arrow.png" Width="24" Height="24" Margin="5" HorizontalAlignment="Center"/>
+                    <Image Source="Icons/TurnArrow.png" Width="24" Height="24" Margin="5" HorizontalAlignment="Center"/>
+                    <Image Source="Icons/text.png" Width="24" Height="24" Margin="5" HorizontalAlignment="Center"/>
                     <!-- Vertical Line -->
-                    <TextBlock Text="|" Margin="5"/>
+                    <TextBlock Text="|" Margin="5" HorizontalAlignment="Center"/>
                     <!-- Color Options -->
-                    <TextBlock Text="Text color" Margin="5"/>
-                    <TextBlock Text="Background color" Margin="5"/>
-                    <TextBlock Text="Gradient color" Margin="5"/>
+                    <Image Source="Icons/textcolor.png" Width="24" Height="24" Margin="5" HorizontalAlignment="Center"/>
+                    <Image Source="Icons/backgroundcolor1.png" Width="24" Height="24" Margin="5" HorizontalAlignment="Center"/>
+                    <Image Source="Icons/backgroundcolor2.png" Width="24" Height="24" Margin="5" HorizontalAlignment="Center"/>
                     <!-- Vertical Line -->
-                    <TextBlock Text="|" Margin="5"/>
+                    <TextBlock Text="|" Margin="5" HorizontalAlignment="Center"/>
                     <!-- Arrow Heads -->
-                    <TextBlock Text="Left arrow head" Margin="5"/>
-                    <TextBlock Text="Right arrow head" Margin="5"/>
-                    <!-- Arrow Middle Part Option -->
-                    <TextBlock Text="Arrow Middle Part" Margin="5"/>
+                    <Image Source="Icons/leftarrowHead.png" Width="24" Height="24" Margin="5" HorizontalAlignment="Center"/>
+                    <Image Source="Icons/arrowmiddlepart.png" Width="24" Height="24" Margin="5" HorizontalAlignment="Center"/>
+                    <Image Source="Icons/rightarrowhead.png" Width="24" Height="24" Margin="5" HorizontalAlignment="Center"/>
                 </StackPanel>
             </Border>
 
@@ -90,7 +144,7 @@
             </Grid>
 
             <!-- Right side content (Object Catalog) -->
-            <Grid Grid.Column="1" Grid.Row="0" Grid.RowSpan="4" Background="LightGray">
+            <Grid Grid.Column="1" Grid.Row="0" Grid.RowSpan="4" Background="LightGray" Margin="0,5,0,0">
                 <StackPanel>
                     <!-- Dropdown for object type selection -->
                     <Grid Margin="10">
@@ -105,7 +159,7 @@
                             <ComboBoxItem Content="Custom" />
                         </ComboBox>
                         <!-- Import icon -->
-                        <Image Grid.Column="1" Source="Icons/Upload.png" Width="24" Height="24" />
+                        <Image Grid.Column="1" Source="Icons/Upload.png" Width="24" Height="24" HorizontalAlignment="Left" />
                     </Grid>
 
                     <!-- Object Catalog content with scroll viewer -->
@@ -125,6 +179,6 @@
                     </ScrollViewer>
                 </StackPanel>
             </Grid>
-        </Grid>
+            </Grid>
     </Grid>
 </Window>

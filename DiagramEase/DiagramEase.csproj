@@ -7,4 +7,32 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Icons\Arrow.png" />
+    <None Remove="Icons\ArrowMiddlePart.png" />
+    <None Remove="Icons\BackgroundColor1.png" />
+    <None Remove="Icons\BackgroundColor2.png" />
+    <None Remove="Icons\LeftArrowHead.png" />
+    <None Remove="Icons\RightArrowHead.png" />
+    <None Remove="Icons\Text.png" />
+    <None Remove="Icons\TextColor.png" />
+    <None Remove="Icons\TurnArrow.png" />
+    <None Remove="Icons\Upload.jpg" />
+    <None Remove="Icons\Upload.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\Arrow.png" />
+    <Resource Include="Icons\ArrowMiddlePart.png" />
+    <Resource Include="Icons\BackgroundColor1.png" />
+    <Resource Include="Icons\BackgroundColor2.png" />
+    <Resource Include="Icons\LeftArrowHead.png" />
+    <Resource Include="Icons\RightArrowHead.png" />
+    <Resource Include="Icons\Text.png" />
+    <Resource Include="Icons\TextColor.png" />
+    <Resource Include="Icons\TurnArrow.png" />
+    <Resource Include="Icons\Upload.jpg" />
+    <Resource Include="Icons\Upload.png" />
+  </ItemGroup>
+
 </Project>
